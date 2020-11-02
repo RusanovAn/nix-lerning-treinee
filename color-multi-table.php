@@ -15,7 +15,7 @@
     <a class="nav-link" href="color-multi-table.php">Урок 2</a>
 </nav>
 <main>
-    <h1>Таблица умножения простая</h1>
+    <h1>Таблица умножения Цветная</h1>
 
     <?php
         $result='<div class="container"><table class="umnojen">';
@@ -33,6 +33,17 @@
             if ($j==$kar) $result.='</tr>';
         }
         $result.='</table></div>';
+
+    $m1   = range(1, 4);
+    $m2   = [
+        '<span style="color: red">1</span>',
+        '<span style="color: green">2</span>',
+        '<span style="color: yellow">3</span>',
+        '<span style="color: blue">4</span>',
+    ];
+
+    $result=str_replace($m1,$m2,$result);
+
         echo $result;
     ?>
 </main>

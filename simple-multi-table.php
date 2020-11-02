@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Nix-learning</title>
     <meta name="description" content="first site Nix-learning">
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="/css/styles.css?v=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
@@ -15,10 +15,28 @@
     <a class="nav-link" href="#">Урок 2</a>
 </nav>
 <main>
-    <h1>Hello, NIX Education</h1>
+    <h1>Таблица умножения простая</h1>
+
+    <?php
+        $result='<div class="container"><table class="umnojen">';
+        $kar=1;
+        for ($j=1;$j<=10;$j++){
+           if ($j==$kar){
+              $result.='<tr>';
+              $kar=$kar+5;
+           }
+           $result.='<td>';
+            for ($k=1;$k<=10;$k++){
+                $result.=$j.'*'.$k.'='.($j * $k).'<br>';
+            }
+            $result.='</td>';
+            if ($j==$kar) $result.='</tr>';
+        }
+        $result.='</table></div>';
+        echo $result;
+    ?>
 </main>
 <footer>Футтер тестовый</footer>
 
 </body>
 </html>
-

@@ -11,9 +11,9 @@
 <header>NIX Education</header>
 <nav class="nav">
     <a class="nav-link" href="/">Главная</a>
-    <a class="nav-link" href="/simple-multi-table.php">Урок 1</a>
-    <a class="nav-link" href="/color-multi-table.php">Урок 2</a>
-    <a class="nav-link" href="/form.php">Урок 3</a>
+    <a class="nav-link" href="/beginer_level/simple-multi-table.phple.php">Урок 1</a>
+    <a class="nav-link" href="/beginer_level/color-multi-table.phple.php">Урок 2</a>
+    <a class="nav-link" href="/beginer_level/form.phprm.php">Урок 3</a>
 </nav>
 <main>
     <h1>Hello, NIX Education</h1>

@@ -12,7 +12,8 @@
 <nav class="nav">
     <a class="nav-link" href="/">Главная</a>
     <a class="nav-link" href="/simple-multi-table.php">Урок 1</a>
-    <a class="nav-link" href="color-multi-table.php">Урок 2</a>
+    <a class="nav-link" href="/color-multi-table.php">Урок 2</a>
+    <a class="nav-link" href="/form.php">Урок 3</a>
 </nav>
 <main>
     <h1>Hello, NIX Education</h1>

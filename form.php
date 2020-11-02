@@ -16,26 +16,14 @@
     <a class="nav-link" href="/form.php">Урок 3</a>
 </nav>
 <main>
-    <h1>Таблица умножения простая</h1>
+    <h1>Форма</h1>
 
-    <?php
-        $result='<div class="container"><table class="umnojen">';
-        $kar=1;
-        for ($j=1;$j<=10;$j++){
-           if ($j==$kar){
-              $result.='<tr>';
-              $kar=$kar+5;
-           }
-           $result.='<td>';
-            for ($k=1;$k<=10;$k++){
-                $result.=$j.'*'.$k.'='.($j * $k).'<br>';
-            }
-            $result.='</td>';
-            if ($j==$kar) $result.='</tr>';
-        }
-        $result.='</table></div>';
-        echo $result;
-    ?>
+    <form  class="form-inline" action="/form-result.php" method="post">
+            <label for="str" class="col-sm-2 col-form-label">Введите строку:</label>
+            <input type="text" class="form-control" id="str" name="str">
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
 </main>
 <footer>Футтер тестовый</footer>
 

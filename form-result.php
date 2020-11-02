@@ -16,37 +16,25 @@
     <a class="nav-link" href="/form.php">Урок 3</a>
 </nav>
 <main>
-    <h1>Таблица умножения Цветная</h1>
+    <h1>Результат Формы</h1>
 
     <?php
-        $result='<div class="container"><table class="umnojen">';
-        $kar=1;
-        for ($j=1;$j<=10;$j++){
-           if ($j==$kar){
-              $result.='<tr>';
-              $kar=$kar+5;
-           }
-           $result.='<td>';
-            for ($k=1;$k<=10;$k++){
-                $result.=$j.'*'.$k.'='.($j * $k).'<br>';
-            }
-            $result.='</td>';
-            if ($j==$kar) $result.='</tr>';
+    $mess=trim(htmlspecialchars($_POST['str']));
+    if ($mess==''){
+        echo 'Ошибка. Введите строку для перевода';
+    }else{
+        echo '<b>Вы ввели:</b> ', $mess,'<br>';
+        function my_rev ($str)//если введен текст в кирилице
+        {
+            $str = iconv('utf-8', 'windows-1251', $str);
+            $str = strrev($str);
+            $str = iconv('windows-1251', 'utf-8', $str);
+            return $str;
         }
-        $result.='</table></div>';
-
-    $m1   = range(1, 4);
-    $m2   = [
-        '<span style="color: red">1</span>',
-        '<span style="color: green">2</span>',
-        '<span style="color: yellow">3</span>',
-        '<span style="color: blue">4</span>',
-    ];
-
-    $result=str_replace($m1,$m2,$result);
-
-        echo $result;
+        echo '<b>Результат:</b> '.my_rev($mess).'<br>';
+    }
     ?>
+    <a class="btn btn-primary my-button" href="/form.php" role="button">Вернуться к форме</a>
 </main>
 <footer>Футтер тестовый</footer>
 

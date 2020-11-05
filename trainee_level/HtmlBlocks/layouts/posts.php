@@ -1,3 +1,10 @@
+<?php
+$file_posts=$_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
+if (file_exists($file_posts)){
+$posts = include $_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
+}
+?>
+
 <main role="main" class="container">
     <hr>
     <div class="row">
@@ -23,36 +30,23 @@
             <h3 class="pb-4 mb-4 font-italic border-bottom">
                 Список постов
             </h3>
-            <div class="blog-post">
-                <h4><a href="#" class="text-dark">Первая статья</a></h4>
-                <p class="blog-post-meta">10 Января, 2014 >> Автор: <a href="#">Андрей</a></p>
+<?php if (isset($posts)):?>
 
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <a href="#">Читать статью</a>
-                <hr>
-            </div><!-- /.blog-post -->
-            <div class="blog-post">
-                <h4><a href="#" class="text-dark">Вторая статья</a></h4>
-                <p class="blog-post-meta">10 Января, 2014 >> Автор: <a href="#">Андрей</a></p>
+  <?php foreach ($posts as $key=>$value):?>
+        <div class="blog-post">
+            <h4><a href="#" class="text-dark"><?=$value['title'];?></a></h4>
+            <p class="blog-post-meta"><?=$value['date_add'];?> >> Автор: <a href="#"><?=$value['autor'];?></a></p>
+            <p><?=$value['text'];?></p>
+            <a href="#">Читать статью</a>
+            <hr>
+        </div><!-- /.blog-post -->
+  <?php endforeach;?>
 
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <a href="#">Читать статью</a>
-                <hr>
-            </div><!-- /.blog-post -->
-
-            <div class="blog-post">
-                <h4><a href="#" class="text-dark">Третяя статья</a></h4>
-                <p class="blog-post-meta">10 Января, 2014 >> Автор: <a href="#">Андрей</a></p>
-
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <a href="#">Читать статью</a>
-                <hr>
-            </div><!-- /.blog-post -->
-
-            <nav class="blog-pagination">
+<?php endif;?>
+<!--            <nav class="blog-pagination">
                 <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Предыдущая страница</a>
                 <a class="btn btn-outline-primary" href="#">Еще статьи</a>
-            </nav>
+            </nav>-->
 
         </div><!-- /.blog-main -->
     </div><!-- /.row -->

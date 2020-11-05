@@ -7,4 +7,6 @@ Trainee level:
     commit 1e79b79188a9c6a8cc5fd938d218a8b9f5c7208a
 
 3. Разбить имеющуюся верстку на компоненты (header, navigation, layout, footer)
-    commit
+    commit 8bc06da41849dae38eadebad88e1a3e637ba13ac
+
+4. Список постов из файла с ассоциотивным массивом

@@ -1,5 +1,9 @@
-
-
+<?php
+$file_posts=$_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
+if (file_exists($file_posts)){
+    $posts = include $_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
+}
+?>
 <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">ВАЖНО! Секрет раскрыт!</h1>
@@ -45,32 +49,19 @@
             <h3 class="pb-4 mb-4 font-italic border-bottom">
                 Последние статьи блога
             </h3>
-            <div class="blog-post">
-                <h3 class="blog-post-title">Первая статья блога</h3>
-                <p class="blog-post-meta">10 Января, 2014 >> Автор: <a href="#">Андрей</a></p>
+            <?php if (isset($posts)):?>
 
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <a href="#">Читать статью</a>
-                <hr>
-            </div><!-- /.blog-post -->
+                <?php foreach ($posts as $key=>$value):?>
+                    <div class="blog-post">
+                        <h4><a href="#" class="text-dark"><?=$value['title'];?></a></h4>
+                        <p class="blog-post-meta"><?=$value['date_add'];?> >> Автор: <a href="#"><?=$value['autor'];?></a></p>
+                        <p><?=$value['text'];?></p>
+                        <a href="#">Читать статью</a>
+                        <hr>
+                    </div><!-- /.blog-post -->
+                <?php endforeach;?>
 
-            <div class="blog-post">
-                <h3 class="blog-post-title">Вторая статья блога</h3>
-                <p class="blog-post-meta">10 Января, 2014 >> Автор: <a href="#">Андрей</a></p>
-
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <a href="#">Читать статью</a>
-                <hr>
-            </div><!-- /.blog-post -->
-
-            <div class="blog-post">
-                <h3 class="blog-post-title">Третья статья блога</h3>
-                <p class="blog-post-meta">10 Января, 2014 >> Автор: <a href="#">Андрей</a></p>
-
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <a href="#">Читать статью</a>
-                <hr>
-            </div><!-- /.blog-post -->
+            <?php endif;?>
 
             <nav class="blog-pagination">
                 <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Предыдущая страница</a>

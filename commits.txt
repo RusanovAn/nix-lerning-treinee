@@ -10,3 +10,4 @@ Trainee level:
     commit 8bc06da41849dae38eadebad88e1a3e637ba13ac
 
 4. Список постов из файла с ассоциотивным массивом
+   commit 48683aa59603f9d38b55f8a69742b700e0494125

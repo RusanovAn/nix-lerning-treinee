@@ -1,10 +1,3 @@
-<?php
-$file_posts=$_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
-if (file_exists($file_posts)){
-$posts = include $_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
-}
-?>
-
 <main role="main" class="container">
     <hr>
     <div class="row">
@@ -30,9 +23,9 @@ $posts = include $_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
             <h3 class="pb-4 mb-4 font-italic border-bottom">
                 Список постов
             </h3>
-<?php if (isset($posts)):?>
+<?php if (isset($data)):?>
 
-  <?php foreach ($posts as $key=>$value):?>
+  <?php foreach ($data as $key=>$value):?>
         <div class="blog-post">
             <h4><a href="#" class="text-dark"><?=$value['title'];?></a></h4>
             <p class="blog-post-meta"><?=$value['date_add'];?> >> Автор: <a href="#"><?=$value['autor'];?></a></p>

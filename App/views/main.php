@@ -1,9 +1,3 @@
-<?php
-$file_posts=$_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
-if (file_exists($file_posts)){
-    $posts = include $_SERVER["DOCUMENT_ROOT"].'/posts/posts.php';
-}
-?>
 <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">ВАЖНО! Секрет раскрыт!</h1>
@@ -49,9 +43,9 @@ if (file_exists($file_posts)){
             <h3 class="pb-4 mb-4 font-italic border-bottom">
                 Последние статьи блога
             </h3>
-            <?php if (isset($posts)):?>
+            <?php if (isset($data)):?>
 
-                <?php foreach ($posts as $key=>$value):?>
+                <?php foreach ($data as $key=>$value):?>
                     <div class="blog-post">
                         <h4><a href="#" class="text-dark"><?=$value['title'];?></a></h4>
                         <p class="blog-post-meta"><?=$value['date_add'];?> >> Автор: <a href="#"><?=$value['autor'];?></a></p>

@@ -1,0 +1,19 @@
+{
+    "name": "rusanov/nix-lerning",
+    "authors": [
+        {
+            "name": "Andrey Rusanov",
+            "email": "dostupnodoma@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core",
+            "App\\": "App",
+            "App\\controllers\\": "App/controllers"
+        }
+    }
+}

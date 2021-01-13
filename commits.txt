@@ -14,3 +14,5 @@ Trainee level:
 
 5. Написать Framework
    commit e5318cedfbdd35a67df26ea298804a2c9fcf069b
+
+   test
